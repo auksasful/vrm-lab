@@ -1,0 +1,11 @@
+Model Information:
+* title:	Treadmill Machine
+* source:	https://sketchfab.com/3d-models/treadmill-machine-faed3a2a275b4fd68089e1d8bdfb7f89
+* author:	Sousinho (https://sketchfab.com/sousinho)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Treadmill Machine" (https://sketchfab.com/3d-models/treadmill-machine-faed3a2a275b4fd68089e1d8bdfb7f89) by Sousinho (https://sketchfab.com/sousinho) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

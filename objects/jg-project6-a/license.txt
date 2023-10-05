@@ -1,0 +1,11 @@
+Model Information:
+* title:	JG-Project6-A
+* source:	https://sketchfab.com/3d-models/jg-project6-a-3f92887511f140b99f2e296ef90d4540
+* author:	jemongolfin98 (https://sketchfab.com/jemongolfin98)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "JG-Project6-A" (https://sketchfab.com/3d-models/jg-project6-a-3f92887511f140b99f2e296ef90d4540) by jemongolfin98 (https://sketchfab.com/jemongolfin98) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stationary Bike
+* source:	https://sketchfab.com/3d-models/stationary-bike-299d993f9eb94d6684562de7dca3514c
+* author:	Francesco Coldesina (https://sketchfab.com/topfrank2013)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stationary Bike" (https://sketchfab.com/3d-models/stationary-bike-299d993f9eb94d6684562de7dca3514c) by Francesco Coldesina (https://sketchfab.com/topfrank2013) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

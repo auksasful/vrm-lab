@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gym Dumbell 10K
+* source:	https://sketchfab.com/3d-models/gym-dumbell-10k-88b150885ef74dfcb93d84bc71f31cd6
+* author:	carloakuma (https://sketchfab.com/carloakuma)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gym Dumbell 10K" (https://sketchfab.com/3d-models/gym-dumbell-10k-88b150885ef74dfcb93d84bc71f31cd6) by carloakuma (https://sketchfab.com/carloakuma) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

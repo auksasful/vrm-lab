@@ -1,0 +1,313 @@
+[gd_scene load_steps=47 format=3 uid="uid://b4uguftyj3cut"]
+
+[ext_resource type="Texture2D" uid="uid://d1dvmewd1xjye" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Ambient_Occlusion.jpg" id="1_8byb2"]
+[ext_resource type="Texture2D" uid="uid://cte11oud88inw" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Base_Color.jpg" id="1_oqx7v"]
+[ext_resource type="Texture2D" uid="uid://d0t4o3h4t8s4g" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Roughness.jpg" id="2_f7atu"]
+[ext_resource type="Texture2D" uid="uid://cpl03vdyewhyt" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Ambient_Occlusion.jpg" id="3_7nqx4"]
+[ext_resource type="Texture2D" uid="uid://bnfwj4hr83we5" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Base_Color.jpg" id="3_306fn"]
+[ext_resource type="PackedScene" uid="uid://ptmdv8omu75e" path="res://prefabs/bike.tscn" id="3_auxqa"]
+[ext_resource type="Texture2D" uid="uid://cnup4x0h7xnb5" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Height.jpg" id="4_d5kjg"]
+[ext_resource type="PackedScene" uid="uid://y8yqc3e6umjg" path="res://prefabs/boxing bag.tscn" id="4_pquo6"]
+[ext_resource type="Texture2D" uid="uid://bofkmtobdmknu" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Normal.jpg" id="4_y3adg"]
+[ext_resource type="PackedScene" uid="uid://bug7biaer00l6" path="res://prefabs/gym bag.tscn" id="5_af4um"]
+[ext_resource type="Texture2D" uid="uid://c3kanuyomj4ii" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Metallic.jpg" id="5_bnjsf"]
+[ext_resource type="PackedScene" uid="uid://f6s7e453loas" path="res://prefabs/door.tscn" id="5_x27bg"]
+[ext_resource type="PackedScene" uid="uid://cvtoq2bgqfbv3" path="res://prefabs/push up matress 2.tscn" id="6_657m8"]
+[ext_resource type="Texture2D" uid="uid://c4vr32ovmm57a" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Normal.jpg" id="6_a5xp2"]
+[ext_resource type="Texture2D" uid="uid://bb4gebavnps6q" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Base_Color.jpg" id="7_15pmf"]
+[ext_resource type="PackedScene" uid="uid://ct0un5nxrn8pc" path="res://prefabs/incline bench.tscn" id="7_t34wd"]
+[ext_resource type="PackedScene" uid="uid://bjbivgd6o4edk" path="res://prefabs/basic desk.tscn" id="8_lfsx7"]
+[ext_resource type="Texture2D" uid="uid://buavg68xxbubt" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Ambient_Occlusion.jpg" id="8_yqsrj"]
+[ext_resource type="Texture2D" uid="uid://cia1mldhre1bp" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Height.jpg" id="9_614it"]
+[ext_resource type="PackedScene" uid="uid://cgmqv3qyik2ah" path="res://prefabs/dumbell.tscn" id="9_bqaeo"]
+[ext_resource type="PackedScene" uid="uid://bytnr27ojgvee" path="res://prefabs/big weight.tscn" id="9_op3mm"]
+[ext_resource type="Texture2D" uid="uid://cmp3llhuw25h3" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Height.jpg" id="9_w47q1"]
+[ext_resource type="Texture2D" uid="uid://b6uplss5qq21w" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Metallic.jpg" id="10_cbauk"]
+[ext_resource type="Texture2D" uid="uid://bfq2b8w0wemx1" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Metallic.jpg" id="10_guyf2"]
+[ext_resource type="PackedScene" uid="uid://dr0jfgj4mr7r8" path="res://prefabs/locker.tscn" id="10_m2wjk"]
+[ext_resource type="PackedScene" uid="uid://cc78rlv8pj2as" path="res://prefabs/smart tv.tscn" id="11_2ky42"]
+[ext_resource type="Texture2D" uid="uid://c3pnvtmx357eh" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Normal.jpg" id="11_o71es"]
+[ext_resource type="Texture2D" uid="uid://dessjm0ljm32j" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Roughness.jpg" id="12_1saa8"]
+[ext_resource type="PackedScene" uid="uid://cc6knq4gby8il" path="res://prefabs/treadmill.tscn" id="12_mmjip"]
+[ext_resource type="Texture2D" uid="uid://b16o2h51d2v74" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Roughness.jpg" id="12_q2ulq"]
+[ext_resource type="PackedScene" uid="uid://cexflmmgm26bq" path="res://prefabs/bench.tscn" id="13_g8x1m"]
+[ext_resource type="PackedScene" uid="uid://cx2bqef07qtwq" path="res://prefabs/towel rack.tscn" id="13_uwg7o"]
+[ext_resource type="PackedScene" uid="uid://blny3lf6g3hw" path="res://prefabs/bench press.tscn" id="14_0ka5v"]
+[ext_resource type="PackedScene" uid="uid://b3ble2rjq3s5j" path="res://prefabs/water bottle.tscn" id="14_7108b"]
+[ext_resource type="PackedScene" uid="uid://jt6kqhnm0vhw" path="res://prefabs/pull up bar.tscn" id="16_8sp11"]
+[ext_resource type="PackedScene" uid="uid://b6gftnmr7pvus" path="res://prefabs/dumbells with holder.tscn" id="18_70jvr"]
+[ext_resource type="PackedScene" uid="uid://d3nl2ekg5vkjr" path="res://prefabs/light.tscn" id="19_lv71h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pkv6"]
+bounce = 0.89
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xpf2r"]
+radius = 0.1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5g7lx"]
+viewport_path = NodePath("Mirror/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5plj"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_5g7lx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rh3m"]
+albedo_texture = ExtResource("1_oqx7v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxyxw"]
+albedo_texture = ExtResource("2_f7atu")
+metallic = 1.0
+metallic_texture = ExtResource("5_bnjsf")
+roughness_texture = ExtResource("2_f7atu")
+normal_enabled = true
+normal_texture = ExtResource("6_a5xp2")
+ao_enabled = true
+ao_texture = ExtResource("3_7nqx4")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_d5kjg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wbvv2"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7vog"]
+albedo_texture = ExtResource("7_15pmf")
+metallic = 1.0
+metallic_texture = ExtResource("10_cbauk")
+roughness_texture = ExtResource("12_q2ulq")
+normal_enabled = true
+normal_texture = ExtResource("11_o71es")
+ao_enabled = true
+ao_texture = ExtResource("8_yqsrj")
+heightmap_enabled = true
+heightmap_texture = ExtResource("9_614it")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgk58"]
+albedo_texture = ExtResource("3_306fn")
+metallic = 1.0
+metallic_texture = ExtResource("10_guyf2")
+roughness_texture = ExtResource("12_1saa8")
+normal_enabled = true
+normal_texture = ExtResource("4_y3adg")
+ao_enabled = true
+ao_texture = ExtResource("1_8byb2")
+heightmap_enabled = true
+heightmap_texture = ExtResource("9_w47q1")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sphere" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9181, 1.38789, 1.50311)
+physics_material_override = SubResource("PhysicsMaterial_0pkv6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere"]
+shape = SubResource("SphereShape3D_xpf2r")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Sphere"]
+radius = 0.1
+radial_segments = 22
+rings = 26
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.834848, -0.24304, 0.493923, 0, 0.897258, 0.441506, -0.550481, -0.36859, 0.749074, 1.72, 0.945, 2.353)
+fov = 117.5
+
+[node name="Objects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650665, 0, -1.07301)
+
+[node name="bikes" type="Node3D" parent="Objects"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.623386, 0.229592, 2.51461)
+
+[node name="scene" parent="Objects/bikes" instance=ExtResource("3_auxqa")]
+
+[node name="boxing bag" parent="Objects" instance=ExtResource("4_pquo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.122, 0.643, 2.744)
+
+[node name="door" parent="Objects" instance=ExtResource("5_x27bg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.80858, -0.0206348, 1.78849)
+
+[node name="gym bag" parent="Objects" instance=ExtResource("5_af4um")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47817, 0.784525, 1.57635)
+
+[node name="push up mattress" parent="Objects" instance=ExtResource("6_657m8")]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 2.27891, 0.015, 2.78442)
+
+[node name="incline bench" parent="Objects" instance=ExtResource("7_t34wd")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.667, 0.168, -0.085)
+
+[node name="basic desk" parent="Objects" instance=ExtResource("8_lfsx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565755, -0.0114608, 3.31761)
+visible = false
+
+[node name="big weight" parent="Objects" instance=ExtResource("9_op3mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.931, 0.153, -0.321)
+
+[node name="dumbells" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.846, 0, 1.073)
+
+[node name="dumbell 1" parent="Objects/dumbells" instance=ExtResource("9_bqaeo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.56515, 0.0686598, -1.56099)
+
+[node name="dumbell 2" parent="Objects/dumbells" instance=ExtResource("9_bqaeo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.28445, 0.0686598, -1.56099)
+
+[node name="lockers" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21682, 0.44854, 1.23768)
+
+[node name="locker 1" parent="Objects/lockers" instance=ExtResource("10_m2wjk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0077008, -0.491307, 0.12931)
+
+[node name="locker 2" parent="Objects/lockers" instance=ExtResource("10_m2wjk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0077008, -0.491307, -0.0993)
+
+[node name="smart tv" parent="Objects" instance=ExtResource("11_2ky42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573, 0.506, 3.117)
+
+[node name="treadmill" parent="Objects" instance=ExtResource("12_mmjip")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.264302, 0.0187772, 2.63171)
+
+[node name="bench" parent="Objects" instance=ExtResource("13_g8x1m")]
+transform = Transform3D(0.998806, 0, 0.0488498, 0, 1, 0, -0.0488498, 0, 0.998806, -1.18345, 0.107, 0.580264)
+
+[node name="bench press" parent="Objects" instance=ExtResource("14_0ka5v")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.530665, 0.333, 0.02201)
+
+[node name="towel rack" parent="Objects" instance=ExtResource("13_uwg7o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.2857, 0.015, 1.86898)
+
+[node name="dumbells with holder" parent="Objects" instance=ExtResource("18_70jvr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.857861, 0.015, -0.888466)
+
+[node name="lights" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.650665, 0.17356, 1.07301)
+
+[node name="light 1" parent="Objects/lights" instance=ExtResource("19_lv71h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0386872, 1.36047, -0.850964)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Objects/lights/light 1"]
+transform = Transform3D(1, 0, 0, 0, 0.0504186, 0.998728, 0, -0.998728, 0.0504187, 0.0141942, -0.0707208, -0.011849)
+light_energy = 2.654
+light_indirect_energy = 2.885
+light_volumetric_fog_energy = 1.284
+light_size = 0.314
+light_specular = 0.1
+distance_fade_length = 132.88
+spot_range = 4.048
+spot_angle = 92.06
+
+[node name="light 2" parent="Objects/lights" instance=ExtResource("19_lv71h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0386872, 1.36047, 1.05885)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Objects/lights/light 2"]
+transform = Transform3D(1, 0, 0, 0, 0.0504186, 0.998728, 0, -0.998728, 0.0504186, 0.0141942, -0.0707208, 0.00431466)
+light_energy = 2.654
+light_indirect_energy = 2.885
+light_volumetric_fog_energy = 1.284
+light_size = 0.314
+light_specular = 0.1
+distance_fade_length = 132.88
+spot_range = 4.048
+spot_angle = 92.06
+
+[node name="basic desk2" parent="Objects" instance=ExtResource("8_lfsx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486335, 0.015, 3.31501)
+
+[node name="water bottles" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.650665, 0, 1.07301)
+
+[node name="water bottle 1" parent="Objects/water bottles" instance=ExtResource("14_7108b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.837472, 0.428179, 2.30683)
+
+[node name="water bottle 2" parent="Objects/water bottles" instance=ExtResource("14_7108b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.837472, 0.428179, 2.19031)
+
+[node name="pull up bar" parent="Objects" instance=ExtResource("16_8sp11")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.49066, 0.015, 0.44601)
+
+[node name="Mirror" type="Node3D" parent="."]
+
+[node name="MirrorPlane" type="CSGBox3D" parent="Mirror"]
+transform = Transform3D(1.31134e-07, 1, 2.76566e-08, 3.82137e-15, 4.37114e-08, -0.63271, -1, 1.31134e-07, 1.20891e-15, 0.0207948, 0.708714, -2.2174)
+size = Vector3(0.033, 3.89, 1.81)
+material = SubResource("StandardMaterial3D_k5plj")
+
+[node name="DummyCam" type="Node" parent="Mirror"]
+
+[node name="SubViewport" type="SubViewport" parent="Mirror"]
+size = Vector2i(1562, 480)
+
+[node name="Camera3D" type="Camera3D" parent="Mirror/SubViewport"]
+transform = Transform3D(-0.993801, 0, 0.111174, 0, 1, 0, -0.111174, 0, -0.993801, -0.231, 0.9, -2.213)
+keep_aspect = 0
+v_offset = -0.09
+current = true
+fov = 151.5
+near = 0.042
+
+[node name="Scene Walls" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Scene Walls"]
+transform = Transform3D(0.839159, 0, 0, 0, 0.247354, 0, 0, 0, 0.994264, 0.00018239, -0.116625, -0.000187993)
+material_override = SubResource("StandardMaterial3D_3rh3m")
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_xxyxw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene Walls/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene Walls/Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_wbvv2")
+
+[node name="Ceiling" type="CSGBox3D" parent="Scene Walls"]
+transform = Transform3D(0.839159, 0, 0, 0, 0.247354, 0, 0, 0, 0.994264, 0.00018239, 1.73801, -0.000187993)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_o7vog")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene Walls/Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene Walls/Ceiling/StaticBody3D"]
+shape = SubResource("BoxShape3D_wbvv2")
+
+[node name="Wall1" type="CSGBox3D" parent="Scene Walls"]
+transform = Transform3D(0.839159, 0, 0, 0, 3.44561, 0, 0, 0, 0.0781886, 0.00018239, 1.44803, 2.65156)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_xgk58")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene Walls/Wall1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene Walls/Wall1/StaticBody3D"]
+shape = SubResource("BoxShape3D_wbvv2")
+
+[node name="Wall2" type="CSGBox3D" parent="Scene Walls"]
+transform = Transform3D(0.839159, 0, 0, 0, 3.44561, 0, 0, 0, 0.0781886, 0.00018239, 1.44803, -2.41985)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_xgk58")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene Walls/Wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene Walls/Wall2/StaticBody3D"]
+shape = SubResource("BoxShape3D_wbvv2")
+
+[node name="Wall3" type="CSGBox3D" parent="Scene Walls"]
+transform = Transform3D(-4.87222e-08, 0, 0.0781701, 0, 3.44479, 0, -1.11463, 0, -3.41692e-09, -2.14303, 1.44803, 0.0694496)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_xgk58")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene Walls/Wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene Walls/Wall3/StaticBody3D"]
+shape = SubResource("BoxShape3D_wbvv2")
+
+[node name="Wall4" type="CSGBox3D" parent="Scene Walls"]
+transform = Transform3D(-4.87222e-08, 0, 0.0781701, 0, 3.44479, 0, -1.11463, 0, -3.41692e-09, 2.3181, 1.44803, 0.0694496)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_xgk58")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene Walls/Wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene Walls/Wall4/StaticBody3D"]
+shape = SubResource("BoxShape3D_wbvv2")

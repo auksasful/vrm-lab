@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr0jfgj4mr7r8"]
+
+[ext_resource type="PackedScene" uid="uid://c8mvw0hra2sdo" path="res://objects/metal__gymboxing_locker/scene.gltf" id="1_yjm6e"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i61d2"]
+points = PackedVector3Array(-1.5196, 0.650603, -1.15693, -1.37231, 1.20503, 1.0096, -1.5196, 11.913, -1.15693, 1.32498, 11.3586, 1.0096, 1.47227, 0.650603, -1.15693, 1.32498, 1.20503, 1.0096, -1.37231, 11.3586, 1.0096, 1.47227, 11.913, -1.15693)
+
+[node name="scene" instance=ExtResource("1_yjm6e")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(8, 0, 0, 0, -3.49691e-07, 8, 0, -8, -3.49691e-07, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/f9b851d8311b4d09884a966e010b9c3e_fbx/RootNode/polySurface2/polySurface2_lockermaterial_0" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/f9b851d8311b4d09884a966e010b9c3e_fbx/RootNode/polySurface2/polySurface2_lockermaterial_0/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_i61d2")

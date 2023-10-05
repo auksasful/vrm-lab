@@ -1,0 +1,105 @@
+Model Information:
+1.
+* title:	Bench
+* source:	https://sketchfab.com/3d-models/bench-e1c5e66f5b50407f8d453813a6b81220
+* author:	Yuli.Enders (https://sketchfab.com/yuli.enders)
+
+2.
+* title:	Bench Press
+* source:	https://sketchfab.com/3d-models/bench-press-e6c409f6d6b0469cb401dbd736286e06
+* author:	Chad Green (https://sketchfab.com/WhimzE)
+
+3.
+* title:	Boxing Heavy Bag
+* source:	https://sketchfab.com/3d-models/boxing-heavy-bag-576b851a49f24693bf37e09a944b0f99
+* author:	urbanmasque (https://sketchfab.com/urbanmasque)
+
+4.
+* title:	Door with frame
+* source:	https://sketchfab.com/3d-models/door-with-frame-2f2f149f3ec44d658a02c1f924dfa449
+* author:	witnessk (https://sketchfab.com/witnessk)
+
+5.
+* title:	Dumbbells With Holder
+* source:	https://sketchfab.com/3d-models/dumbbells-with-holder-9147324d159f4214ab878465e6ef6dd1
+* author:	Microsoft (https://sketchfab.com/microsoft)
+
+6.
+* title:	Gym Bag, Flat
+* source:	https://sketchfab.com/3d-models/gym-bag-flat-33bed0e4744c4deaa3561453525396db
+* author:	SmallpolyArt (https://sketchfab.com/SmallpolyArt)
+
+7.
+* title:	Gym Dumbell 10K
+* source:	https://sketchfab.com/3d-models/gym-dumbell-10k-88b150885ef74dfcb93d84bc71f31cd6
+* author:	carloakuma (https://sketchfab.com/carloakuma)
+
+8.
+* title:	Gym Props. Mat and push-up equipment
+* source:	https://sketchfab.com/3d-models/gym-props-mat-and-push-up-equipment-4bd89c4f43374912b9421b2b127108b4
+* author:	draakon_4d (https://sketchfab.com/draakon_4d)
+
+9.
+* title:	Incline Bench
+* source:	https://sketchfab.com/3d-models/incline-bench-bdc274649c234c188d2d4f4c732acb1c
+* author:	Sousinho (https://sketchfab.com/sousinho)
+
+10.
+* title:	JG-Project6-A
+* source:	https://sketchfab.com/3d-models/jg-project6-a-3f92887511f140b99f2e296ef90d4540
+* author:	jemongolfin98 (https://sketchfab.com/jemongolfin98)
+
+11.
+* title:	Low Poly hanging Light
+* source:	https://sketchfab.com/3d-models/low-poly-hanging-light-b70dcbb9568846feb4758edcbefbe2c5
+* author:	Avadhoot (https://sketchfab.com/avadhootnb11)
+
+12.
+* title:	Metal  Gym/Boxing Locker
+* source:	https://sketchfab.com/3d-models/metal-gymboxing-locker-975fe97634ad4812bc3b7450e7de6efb
+* author:	CAL21 (https://sketchfab.com/CAL21)
+
+13.
+* title:	Pull Up Bar
+* source:	https://sketchfab.com/3d-models/pull-up-bar-f5b6dc0cd95d4430886ece65096d6f11
+* author:	clon6767 (https://sketchfab.com/clon6767)
+
+14.
+* title:	Smart TV
+* source:	https://sketchfab.com/3d-models/smart-tv-67e1ecb48de643eeb2bbd86185cfe81b
+* author:	Gunnar Correa (https://sketchfab.com/gunnarcorrea)
+
+15.
+* title:	Stationary Bike
+* source:	https://sketchfab.com/3d-models/stationary-bike-299d993f9eb94d6684562de7dca3514c
+* author:	Francesco Coldesina (https://sketchfab.com/topfrank2013)
+
+16.
+* title:	Towel Rail [Free] | Agustin Honnun
+* source:	https://sketchfab.com/3d-models/towel-rail-free-agustin-honnun-3a0a70f412e14b0685848748e0828138
+* author:	Agustín Hönnun (https://sketchfab.com/Agustin_Honnun)
+
+17.
+* title:	Treadmill Machine
+* source:	https://sketchfab.com/3d-models/treadmill-machine-faed3a2a275b4fd68089e1d8bdfb7f89
+* author:	Sousinho (https://sketchfab.com/sousinho)
+
+18.
+* title:	Very simple water bottle
+* source:	https://sketchfab.com/3d-models/very-simple-water-bottle-a2b3757dd4544a92b6b5602bc5bc65c6
+* author:	Blender3D (https://sketchfab.com/Blender3D)
+
+19.
+* title:	Wooden Table
+* source:	https://sketchfab.com/3d-models/wooden-table-0dc1c7d6cbab4d74bef7c4f82abf2caf
+* author:	FlukierJupiter (https://sketchfab.com/FlukierJupiter)
+
+20.
+* title:	Materials_Concrete
+* source:	https://juliosillet.gumroad.com/l/iGhOe?layout=profile
+* author:	Julio Sillet (https://juliosillet.gumroad.com)
+
+
+
+
+

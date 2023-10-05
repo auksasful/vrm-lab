@@ -1,0 +1,11 @@
+Model Information:
+* title:	Incline Bench
+* source:	https://sketchfab.com/3d-models/incline-bench-bdc274649c234c188d2d4f4c732acb1c
+* author:	Sousinho (https://sketchfab.com/sousinho)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Incline Bench" (https://sketchfab.com/3d-models/incline-bench-bdc274649c234c188d2d4f4c732acb1c) by Sousinho (https://sketchfab.com/sousinho) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

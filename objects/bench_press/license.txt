@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bench Press
+* source:	https://sketchfab.com/3d-models/bench-press-e6c409f6d6b0469cb401dbd736286e06
+* author:	Chad Green (https://sketchfab.com/WhimzE)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bench Press" (https://sketchfab.com/3d-models/bench-press-e6c409f6d6b0469cb401dbd736286e06) by Chad Green (https://sketchfab.com/WhimzE) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

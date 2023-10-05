@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc78rlv8pj2as"]
+
+[ext_resource type="PackedScene" uid="uid://ql2lq6grbq36" path="res://objects/smart_tv/scene.gltf" id="1_pjk4t"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xcmlr"]
+points = PackedVector3Array(86.1742, 89.4351, 5.03759, -28.1107, -52.6914, -3.32472, -19.743, -88.9608, -3.32472, 86.1742, 89.4351, -3.32472, 86.1742, -88.9608, 5.03759, -19.743, 89.4351, 5.03759, -19.743, -88.9608, 5.03759, 86.1742, -88.9608, -3.32472, -19.743, 89.4351, -3.32472, -28.1107, 53.1832, 5.03759, -28.1107, -52.6914, 5.03759, -28.1107, 53.1832, -3.32472)
+
+[node name="scene" instance=ExtResource("1_pjk4t")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(-0.003, -4.52987e-10, 0, 4.52987e-10, -0.003, 0, 0, 0, 0.003, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/799796abf5bc4cd29d2731f9aa79e235_fbx/RootNode/Cube/Cube_Material_0" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/799796abf5bc4cd29d2731f9aa79e235_fbx/RootNode/Cube/Cube_Material_0/StaticBody3D" index="0"]
+transform = Transform3D(1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_xcmlr")
