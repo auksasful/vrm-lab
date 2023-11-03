@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b4uguftyj3cut"]
+[gd_scene load_steps=50 format=3 uid="uid://b4uguftyj3cut"]
 
 [ext_resource type="Texture2D" uid="uid://d1dvmewd1xjye" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Ambient_Occlusion.jpg" id="1_8byb2"]
 [ext_resource type="Texture2D" uid="uid://cte11oud88inw" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Base_Color.jpg" id="1_oqx7v"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://jt6kqhnm0vhw" path="res://prefabs/pull up bar.tscn" id="16_8sp11"]
 [ext_resource type="PackedScene" uid="uid://b6gftnmr7pvus" path="res://prefabs/dumbells with holder.tscn" id="18_70jvr"]
 [ext_resource type="PackedScene" uid="uid://d3nl2ekg5vkjr" path="res://prefabs/light.tscn" id="19_lv71h"]
+[ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://scenes/Player/player.tscn" id="38_y5xjl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pkv6"]
 bounce = 0.89
@@ -93,6 +94,10 @@ ao_texture = ExtResource("1_8byb2")
 heightmap_enabled = true
 heightmap_texture = ExtResource("9_w47q1")
 
+[sub_resource type="Environment" id="Environment_wkthg"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_bk737"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Sphere" type="RigidBody3D" parent="."]
@@ -106,10 +111,6 @@ shape = SubResource("SphereShape3D_xpf2r")
 radius = 0.1
 radial_segments = 22
 rings = 26
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.834848, -0.24304, 0.493923, 0, 0.897258, 0.441506, -0.550481, -0.36859, 0.749074, 1.72, 0.945, 2.353)
-fov = 117.5
 
 [node name="Objects" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650665, 0, -1.07301)
@@ -311,3 +312,10 @@ material = SubResource("StandardMaterial3D_xgk58")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene Walls/Wall4/StaticBody3D"]
 shape = SubResource("BoxShape3D_wbvv2")
+
+[node name="Player" parent="." instance=ExtResource("38_y5xjl")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.32269, 0.574453, 0.000383437)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wkthg")
+camera_attributes = SubResource("CameraAttributesPractical_bk737")
