@@ -1,6 +1,7 @@
-[gd_scene load_steps=50 format=3 uid="uid://b4uguftyj3cut"]
+[gd_scene load_steps=55 format=3 uid="uid://b4uguftyj3cut"]
 
 [ext_resource type="Texture2D" uid="uid://d1dvmewd1xjye" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Ambient_Occlusion.jpg" id="1_8byb2"]
+[ext_resource type="Script" path="res://scripts/PickableObject.gd" id="1_knuxr"]
 [ext_resource type="Texture2D" uid="uid://cte11oud88inw" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Base_Color.jpg" id="1_oqx7v"]
 [ext_resource type="Texture2D" uid="uid://d0t4o3h4t8s4g" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Roughness.jpg" id="2_f7atu"]
 [ext_resource type="Texture2D" uid="uid://cpl03vdyewhyt" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Ambient_Occlusion.jpg" id="3_7nqx4"]
@@ -38,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://b6gftnmr7pvus" path="res://prefabs/dumbells with holder.tscn" id="18_70jvr"]
 [ext_resource type="PackedScene" uid="uid://d3nl2ekg5vkjr" path="res://prefabs/light.tscn" id="19_lv71h"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://scenes/Player/player.tscn" id="38_y5xjl"]
+[ext_resource type="Script" path="res://scenes/InteractionTextManager.gd" id="39_517wa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pkv6"]
 bounce = 0.89
@@ -98,16 +100,25 @@ heightmap_texture = ExtResource("9_w47q1")
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_bk737"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dypxx"]
+
+[sub_resource type="Theme" id="Theme_4qvxd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr688"]
+
 [node name="Node3D" type="Node3D"]
 
-[node name="Sphere" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9181, 1.38789, 1.50311)
-physics_material_override = SubResource("PhysicsMaterial_0pkv6")
+[node name="SphereParent" type="Node3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere"]
+[node name="Sphere" type="RigidBody3D" parent="SphereParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.918098, 1.38789, 0.477544)
+physics_material_override = SubResource("PhysicsMaterial_0pkv6")
+script = ExtResource("1_knuxr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SphereParent/Sphere"]
 shape = SubResource("SphereShape3D_xpf2r")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Sphere"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="SphereParent/Sphere"]
 radius = 0.1
 radial_segments = 22
 rings = 26
@@ -319,3 +330,30 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.32269, 0.574453, 0.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wkthg")
 camera_attributes = SubResource("CameraAttributesPractical_bk737")
+
+[node name="Center Dot" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_dypxx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 587.0
+offset_top = 311.0
+offset_right = -561.0
+offset_bottom = -333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4qvxd")
+texture = SubResource("CanvasTexture_lr688")
+
+[node name="Interaction text" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_top = 0.531
+anchor_right = 1.0
+anchor_bottom = 0.583
+offset_top = -0.0880127
+offset_bottom = 0.216003
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("39_517wa")
