@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://b4uguftyj3cut"]
+[gd_scene load_steps=57 format=3 uid="uid://b4uguftyj3cut"]
 
 [ext_resource type="Texture2D" uid="uid://d1dvmewd1xjye" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Ambient_Occlusion.jpg" id="1_8byb2"]
 [ext_resource type="Script" path="res://scripts/PickableObject.gd" id="1_knuxr"]
@@ -39,13 +39,19 @@
 [ext_resource type="PackedScene" uid="uid://b6gftnmr7pvus" path="res://prefabs/dumbells with holder.tscn" id="18_70jvr"]
 [ext_resource type="PackedScene" uid="uid://d3nl2ekg5vkjr" path="res://prefabs/light.tscn" id="19_lv71h"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://scenes/Player/player.tscn" id="38_y5xjl"]
-[ext_resource type="Script" path="res://scenes/InteractionTextManager.gd" id="39_517wa"]
+[ext_resource type="Script" path="res://scripts/InteractionText.gd" id="40_vufot"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pkv6"]
 bounce = 0.89
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xpf2r"]
 radius = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrwlx"]
+size = Vector3(0.485, 0.25, 0.11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhjby"]
+size = Vector3(0.055, 0.175, 0.045)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5g7lx"]
 viewport_path = NodePath("Mirror/SubViewport")
@@ -156,11 +162,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.931, 0.153, -0.321)
 [node name="dumbells" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.846, 0, 1.073)
 
-[node name="dumbell 1" parent="Objects/dumbells" instance=ExtResource("9_bqaeo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.56515, 0.0686598, -1.56099)
+[node name="RigidBody3D" type="RigidBody3D" parent="Objects/dumbells"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43523, 0, -1.55001)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("1_knuxr")
 
-[node name="dumbell 2" parent="Objects/dumbells" instance=ExtResource("9_bqaeo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.28445, 0.0686598, -1.56099)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/dumbells/RigidBody3D"]
+shape = SubResource("BoxShape3D_hrwlx")
+
+[node name="dumbell 1" parent="Objects/dumbells/RigidBody3D" instance=ExtResource("9_bqaeo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.129921, 0.0686598, -0.0109757)
+
+[node name="dumbell 2" parent="Objects/dumbells/RigidBody3D" instance=ExtResource("9_bqaeo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.150779, 0.0686598, -0.0109757)
 
 [node name="lockers" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21682, 0.44854, 1.23768)
@@ -226,11 +242,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486335, 0.015, 3.31501)
 [node name="water bottles" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.650665, 0, 1.07301)
 
-[node name="water bottle 1" parent="Objects/water bottles" instance=ExtResource("14_7108b")]
+[node name="RigidBody3D" type="RigidBody3D" parent="Objects/water bottles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.837472, 0.428179, 2.30683)
+collision_layer = 2
+collision_mask = 2
+freeze = true
+script = ExtResource("1_knuxr")
 
-[node name="water bottle 2" parent="Objects/water bottles" instance=ExtResource("14_7108b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.837472, 0.428179, 2.19031)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/water bottles/RigidBody3D"]
+shape = SubResource("BoxShape3D_fhjby")
+
+[node name="water bottle 1" parent="Objects/water bottles/RigidBody3D" instance=ExtResource("14_7108b")]
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="Objects/water bottles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.837472, 0.428179, 2.18301)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("1_knuxr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/water bottles/RigidBody3D2"]
+shape = SubResource("BoxShape3D_fhjby")
+
+[node name="water bottle 1" parent="Objects/water bottles/RigidBody3D2" instance=ExtResource("14_7108b")]
 
 [node name="pull up bar" parent="Objects" instance=ExtResource("16_8sp11")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.49066, 0.015, 0.44601)
@@ -345,7 +379,7 @@ grow_vertical = 2
 theme = SubResource("Theme_4qvxd")
 texture = SubResource("CanvasTexture_lr688")
 
-[node name="Interaction text" type="RichTextLabel" parent="."]
+[node name="InteractionText" type="RichTextLabel" parent="."]
 anchors_preset = -1
 anchor_top = 0.531
 anchor_right = 1.0
@@ -356,4 +390,4 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-script = ExtResource("39_517wa")
+script = ExtResource("40_vufot")

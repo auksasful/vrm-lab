@@ -23,6 +23,8 @@ points = PackedVector3Array(-0.119923, -0.0429437, -0.730084, 0.133946, 0.052226
 transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Object001/defaultMaterial" index="0"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="@CollisionShape3D@224338" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Object001/defaultMaterial/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 4.23516e-22, 0, -4.23516e-22, 1, 0, 0, 0)
@@ -33,6 +35,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 4.23516e-22, 0, -4.23516e-22, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ip2q5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Weight/defaultMaterial2" index="0"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="@CollisionShape3D@224606" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Weight/defaultMaterial2/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 4.23516e-22, 0, -4.23516e-22, 1, 0, 0, 0)
@@ -43,6 +47,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 4.23516e-22, 0, -4.23516e-22, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_vuuto")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/dumbell/defaultMaterial3" index="0"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/dumbell/defaultMaterial3/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 4.23516e-22, 0, -4.23516e-22, 1, 0, 0, 0)
