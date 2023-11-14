@@ -3,6 +3,8 @@ extends CharacterBody3D
 @onready var gunRay = $Head/Camera3d/RayCast3d as RayCast3D
 @onready var Cam = $Head/Camera3d as Camera3D
 @onready var Hand = $Head/Camera3d/Hand
+@onready var AnimPlayer = $AnimationPlayer
+@onready var my_timer = Timer.new()
 @export var _bullet_scene : PackedScene
 var mouseSensibility = 1200
 var mouse_relative_x = 0
@@ -11,11 +13,13 @@ const SPEED = 2.0
 const JUMP_VELOCITY = 4.5
 
 var pickedUp = false
+var doingExercise = false
 var currPickedObject = null
 var currPickedObjectPosition = null
 var currPickedObjectRotation = Quaternion()
 var pullPower = 20
 var InteractionTextGlobal = null
+var animation_pullup_count = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -24,28 +28,42 @@ func _ready():
 	#Captures mouse and stops rgun from hitting yourself
 	gunRay.add_exception(self)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	AnimPlayer.connect("animation_finished", Callable(self, "_on_AnimationPlayer_animation_finished"))
+	my_timer.wait_time = 1  # 1 second
+	my_timer.one_shot = true
+	add_child(my_timer)
+	my_timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
+
 	#InteractionTextGlobal = find_node_by_script("InteractionText") as RichTextLabel
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
+	
+	if pickedUp:
+		Global.CurrentInteractionText = "Click to release object"
+	elif doingExercise:
+		Global.CurrentInteractionText = "Keep pressing [E] to continue doing exercise!"
+	else:
+		if gunRay.get_collider() is PickableObject:
+			Global.CurrentInteractionText = "Click to pick up object"
+		elif gunRay.get_collider() is InteractableObject:
+			Global.CurrentInteractionText = "Press [E] to interact"
+		else:
+			Global.CurrentInteractionText = ""
+		
+	if Input.is_action_just_pressed("interact"):
+		interact()
+		
+	if doingExercise:
+		return
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	# Handle Shooting
 	if Input.is_action_just_pressed("Shoot"):
 		pickup()
-	
-	if pickedUp:
-		Global.CurrentInteractionText = "Click to release object"
-	else:
-		if gunRay.get_collider() is PickableObject:
-			Global.CurrentInteractionText = "Click to pick up object"
-		else:
-			Global.CurrentInteractionText = ""
-		
 		#shoot()
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("moveLeft", "moveRight", "moveUp", "moveDown")
@@ -124,5 +142,31 @@ func pickup():
 		#set_collision_masks(currPickedObject, true)
 		pass
 		
-		
+func interact():
+	print("interact button pressed")
+	if doingExercise:
+		my_timer.stop()
+		my_timer.start()
+		print("timer reset")	
+		pass
 	
+	if not gunRay.is_colliding():
+			return
+			
+	if gunRay.get_collider() is PullUp:
+		print("do pull up now")
+		AnimPlayer.play("Pull up")
+		my_timer.start()
+		doingExercise = true
+		
+		
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Pull up":  # Replace with your specific animation name
+		animation_pullup_count += 1
+		print("Animation has looped ", animation_pullup_count, " times") 
+		AnimPlayer.play("Pull up")
+
+func _on_Timer_timeout():
+	print("Timer finished!")
+	AnimPlayer.play("Idle")
+	doingExercise = false
