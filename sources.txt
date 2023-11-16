@@ -99,6 +99,10 @@ Model Information:
 * source:	https://juliosillet.gumroad.com/l/iGhOe?layout=profile
 * author:	Julio Sillet (https://juliosillet.gumroad.com)
 
+21.
+* title:	FPS Controller (Mono)
+* source:	https://github.com/ismailgamedev/FPS-Controller-Mono
+* author:	Ismail Filipov (ismailgamedev https://github.com/ismailgamedev)
 
 
 
