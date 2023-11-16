@@ -1,6 +1,6 @@
 extends InteractableObject
 
-class_name PullUp
+class_name BigWeightParent
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,4 +12,4 @@ func _process(delta):
 	pass
 
 func GetExerciseName():
-	return "pull up"
+	return "deadlift"

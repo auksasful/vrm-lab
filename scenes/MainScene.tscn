@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://b4uguftyj3cut"]
+[gd_scene load_steps=75 format=3 uid="uid://b4uguftyj3cut"]
 
 [ext_resource type="Texture2D" uid="uid://d1dvmewd1xjye" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Ambient_Occlusion.jpg" id="1_8byb2"]
 [ext_resource type="Script" path="res://scripts/PickableObject.gd" id="1_knuxr"]
@@ -15,10 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://f6s7e453loas" path="res://prefabs/door.tscn" id="5_x27bg"]
 [ext_resource type="PackedScene" uid="uid://cvtoq2bgqfbv3" path="res://prefabs/push up matress 2.tscn" id="6_657m8"]
 [ext_resource type="Texture2D" uid="uid://c4vr32ovmm57a" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Normal.jpg" id="6_a5xp2"]
+[ext_resource type="Script" path="res://scripts/PushUpMat.gd" id="6_lp4cs"]
 [ext_resource type="Texture2D" uid="uid://bb4gebavnps6q" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Base_Color.jpg" id="7_15pmf"]
 [ext_resource type="PackedScene" uid="uid://ct0un5nxrn8pc" path="res://prefabs/incline bench.tscn" id="7_t34wd"]
+[ext_resource type="Script" path="res://scripts/InclineBench.gd" id="8_2yady"]
 [ext_resource type="PackedScene" uid="uid://bjbivgd6o4edk" path="res://prefabs/basic desk.tscn" id="8_lfsx7"]
 [ext_resource type="Texture2D" uid="uid://buavg68xxbubt" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Ambient_Occlusion.jpg" id="8_yqsrj"]
+[ext_resource type="Script" path="res://scripts/BigWeightParent.gd" id="9_7l4ly"]
 [ext_resource type="Texture2D" uid="uid://cia1mldhre1bp" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Height.jpg" id="9_614it"]
 [ext_resource type="PackedScene" uid="uid://cgmqv3qyik2ah" path="res://prefabs/dumbell.tscn" id="9_bqaeo"]
 [ext_resource type="PackedScene" uid="uid://bytnr27ojgvee" path="res://prefabs/big weight.tscn" id="9_op3mm"]
@@ -31,16 +34,23 @@
 [ext_resource type="Texture2D" uid="uid://dessjm0ljm32j" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Roughness.jpg" id="12_1saa8"]
 [ext_resource type="PackedScene" uid="uid://cc6knq4gby8il" path="res://prefabs/treadmill.tscn" id="12_mmjip"]
 [ext_resource type="Texture2D" uid="uid://b16o2h51d2v74" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Panels_01/Concrete_Panels_01_Roughness.jpg" id="12_q2ulq"]
+[ext_resource type="Script" path="res://scripts/Dumbells.gd" id="13_0ghb5"]
 [ext_resource type="PackedScene" uid="uid://cexflmmgm26bq" path="res://prefabs/bench.tscn" id="13_g8x1m"]
 [ext_resource type="PackedScene" uid="uid://cx2bqef07qtwq" path="res://prefabs/towel rack.tscn" id="13_uwg7o"]
 [ext_resource type="PackedScene" uid="uid://blny3lf6g3hw" path="res://prefabs/bench press.tscn" id="14_0ka5v"]
 [ext_resource type="PackedScene" uid="uid://b3ble2rjq3s5j" path="res://prefabs/water bottle.tscn" id="14_7108b"]
+[ext_resource type="Script" path="res://scripts/Treadmill.gd" id="15_tl3fc"]
 [ext_resource type="PackedScene" uid="uid://jt6kqhnm0vhw" path="res://prefabs/pull up bar.tscn" id="16_8sp11"]
+[ext_resource type="Script" path="res://scripts/Bench.gd" id="17_qoiae"]
 [ext_resource type="PackedScene" uid="uid://b6gftnmr7pvus" path="res://prefabs/dumbells with holder.tscn" id="18_70jvr"]
+[ext_resource type="Script" path="res://scripts/BenchPress.gd" id="19_7r53r"]
 [ext_resource type="PackedScene" uid="uid://d3nl2ekg5vkjr" path="res://prefabs/light.tscn" id="19_lv71h"]
 [ext_resource type="Script" path="res://scripts/PullUp.gd" id="21_kvnw6"]
+[ext_resource type="Script" path="res://scripts/Dip.gd" id="22_q1f4w"]
+[ext_resource type="Script" path="res://scripts/WaterBottle.gd" id="26_11vk7"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://scenes/Player/player.tscn" id="38_y5xjl"]
 [ext_resource type="Script" path="res://scripts/InteractionText.gd" id="40_vufot"]
+[ext_resource type="Script" path="res://scripts/TaskText.gd" id="51_46o3s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pkv6"]
 bounce = 0.89
@@ -48,8 +58,26 @@ bounce = 0.89
 [sub_resource type="SphereShape3D" id="SphereShape3D_xpf2r"]
 radius = 0.1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_h02ly"]
+size = Vector3(0.50777, 0.759508, 0.0361853)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7glb"]
+size = Vector3(0.161183, 0.611394, 0.149812)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pf2mb"]
+size = Vector3(1.01984, 0.277399, 0.274852)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_hrwlx"]
 size = Vector3(0.485, 0.25, 0.11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5eg08"]
+size = Vector3(0.121263, 0.742833, 0.253195)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqxhl"]
+size = Vector3(0.22203, 0.724378, 0.825592)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jycpl"]
+size = Vector3(0.333159, 0.336729, 0.120227)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhjby"]
 size = Vector3(0.055, 0.175, 0.045)
@@ -119,6 +147,7 @@ heightmap_texture = ExtResource("9_w47q1")
 [node name="Node3D" type="Node3D"]
 
 [node name="SphereParent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01432, 0, 0)
 
 [node name="Sphere" type="RigidBody3D" parent="SphereParent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.918098, 1.38789, 0.477544)
@@ -150,28 +179,59 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.8085
 [node name="gym bag" parent="Objects" instance=ExtResource("5_af4um")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47817, 0.784525, 1.57635)
 
-[node name="push up mattress" parent="Objects" instance=ExtResource("6_657m8")]
+[node name="Push up mattress parent" type="RigidBody3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 2.27891, 0.015, 2.78442)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("6_lp4cs")
 
-[node name="incline bench" parent="Objects" instance=ExtResource("7_t34wd")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.667, 0.168, -0.085)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Push up mattress parent"]
+shape = SubResource("BoxShape3D_h02ly")
+
+[node name="push up mattress" parent="Objects/Push up mattress parent" instance=ExtResource("6_657m8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="incline bench parent" type="RigidBody3D" parent="Objects"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.79531, 0.168, -0.085)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("8_2yady")
+
+[node name="incline bench" parent="Objects/incline bench parent" instance=ExtResource("7_t34wd")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/incline bench parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0871327, 0, -0.32843)
+shape = SubResource("BoxShape3D_t7glb")
 
 [node name="basic desk" parent="Objects" instance=ExtResource("8_lfsx7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565755, -0.0114608, 3.31761)
 visible = false
 
-[node name="big weight" parent="Objects" instance=ExtResource("9_op3mm")]
+[node name="big weight parent" type="RigidBody3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0905612, 0, -0.311974)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("9_7l4ly")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/big weight parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87998, 0.153, -0.321)
+shape = SubResource("BoxShape3D_pf2mb")
+
+[node name="big weight" parent="Objects/big weight parent" instance=ExtResource("9_op3mm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.931, 0.153, -0.321)
 
 [node name="dumbells" type="Node3D" parent="Objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.846, 0, 1.073)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.697064, 0, 1.073)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Objects/dumbells"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43523, 0, -1.55001)
 collision_layer = 3
 collision_mask = 2
 freeze = true
-script = ExtResource("1_knuxr")
+script = ExtResource("13_0ghb5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/dumbells/RigidBody3D"]
 shape = SubResource("BoxShape3D_hrwlx")
@@ -194,14 +254,46 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0077
 [node name="smart tv" parent="Objects" instance=ExtResource("11_2ky42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573, 0.506, 3.117)
 
-[node name="treadmill" parent="Objects" instance=ExtResource("12_mmjip")]
+[node name="treadmill parent" type="RigidBody3D" parent="Objects"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.264302, 0.0187772, 2.63171)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("15_tl3fc")
 
-[node name="bench" parent="Objects" instance=ExtResource("13_g8x1m")]
+[node name="treadmill" parent="Objects/treadmill parent" instance=ExtResource("12_mmjip")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/treadmill parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.135995, 0, 0)
+shape = SubResource("BoxShape3D_5eg08")
+
+[node name="bench parent" type="RigidBody3D" parent="Objects"]
 transform = Transform3D(0.998806, 0, 0.0488498, 0, 1, 0, -0.0488498, 0, 0.998806, -1.18345, 0.107, 0.580264)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("17_qoiae")
 
-[node name="bench press" parent="Objects" instance=ExtResource("14_0ka5v")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.530665, 0.333, 0.02201)
+[node name="bench" parent="Objects/bench parent" instance=ExtResource("13_g8x1m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/bench parent"]
+shape = SubResource("BoxShape3D_jqxhl")
+
+[node name="bench press parent" type="RigidBody3D" parent="Objects"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.274194, 0.333, 0.02201)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("19_7r53r")
+
+[node name="bench press" parent="Objects/bench press parent" instance=ExtResource("14_0ka5v")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/bench press parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0, -0.335321)
+shape = SubResource("BoxShape3D_jycpl")
+
+[node name="StartingPoint" type="Node3D" parent="Objects/bench press parent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00996312, 0.112572, -0.742461)
 
 [node name="towel rack" parent="Objects" instance=ExtResource("13_uwg7o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.2857, 0.015, 1.86898)
@@ -251,7 +343,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.837472, 0.428179, 2.30683)
 collision_layer = 2
 collision_mask = 2
 freeze = true
-script = ExtResource("1_knuxr")
+script = ExtResource("26_11vk7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/water bottles/RigidBody3D"]
 shape = SubResource("BoxShape3D_fhjby")
@@ -263,7 +355,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.837472, 0.428179, 2.18301)
 collision_layer = 3
 collision_mask = 2
 freeze = true
-script = ExtResource("1_knuxr")
+script = ExtResource("26_11vk7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/water bottles/RigidBody3D2"]
 shape = SubResource("BoxShape3D_fhjby")
@@ -281,6 +373,17 @@ freeze = true
 script = ExtResource("21_kvnw6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/pull up bar/Pull up shape"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00870484, 0)
+shape = SubResource("BoxShape3D_6fq4l")
+
+[node name="Dips shape" type="RigidBody3D" parent="Objects/pull up bar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.400536, 0.0481323)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("22_q1f4w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/pull up bar/Dips shape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00870484, 0)
 shape = SubResource("BoxShape3D_6fq4l")
 
@@ -406,3 +509,16 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("40_vufot")
+
+[node name="TaskText" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_top = 0.006
+anchor_right = 1.0
+anchor_bottom = 0.093
+offset_top = 0.112
+offset_bottom = -0.264
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("51_46o3s")
