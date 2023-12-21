@@ -4,6 +4,9 @@ extends CharacterBody3D
 @onready var Cam = $Head/Camera3d as Camera3D
 @onready var Hand = $Head/Camera3d/Hand
 @onready var AnimPlayer = $AnimationPlayer
+@onready var WaterSplashAnimPlayer = $WaterSplashAnimationPlayer
+@onready var DropWeightsStream = $DropWeightsStream
+@onready var DropBottleStream = $DropBottleStream
 @onready var my_timer = Timer.new()
 @export var _bullet_scene : PackedScene
 var mouseSensibility = 1200
@@ -16,13 +19,17 @@ var pickedUp = false
 var doingExercise = false
 var sitting = false
 var drinking = false
+var playDropOnFinishExercise = false
+var freeze_camera = false
 var currPickedObject = null
 var currPickedObjectPosition = null
 var currPickedObjectRotation = Quaternion()
 var pullPower = 20
+var currentReps = 0
 var InteractionTextGlobal = null
 
 var BigWeightParentObject = null
+var BenchObject = null
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -38,6 +45,8 @@ func _ready():
 	my_timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
 	AnimPlayer.play("Idle")
 	Global.CheckTaskDone()
+	WaterSplashAnimPlayer.play("Sweating")
+	WaterSplashAnimPlayer.stop()
 
 	#InteractionTextGlobal = find_node_by_script("InteractionText") as RichTextLabel
 
@@ -115,7 +124,7 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		if doingExercise:
+		if doingExercise or freeze_camera:
 			return
 		rotation.y -= event.relative.x / mouseSensibility
 		$Head/Camera3d.rotation.x -= event.relative.y / mouseSensibility
@@ -169,6 +178,10 @@ func pickup():
 		currPickedObject.collision_layer = 1
 		currPickedObject.collision_layer = 2
 		currPickedObject.collision_mask = 1
+		if currPickedObject is Dumbells:
+			DropWeightsStream.play()
+		if currPickedObject is WaterBottle:
+			DropBottleStream.play()
 		#set_collision_masks(currPickedObject, true)
 		pass
 		
@@ -183,6 +196,7 @@ func interact():
 	if sitting:
 		AnimPlayer.play("Idle")
 		sitting = false
+		BenchObject.PlaySound()
 		return
 		
 	if pickedUp:
@@ -236,11 +250,14 @@ func interact():
 		print("do sitting now")
 		AnimPlayer.play("Sit")
 		sitting = true
+		BenchObject = gunRay.get_collider() as Bench
+		BenchObject.PlaySound()
 	elif gunRay.get_collider() is BenchPress:
 		print("do bench press now")
 		AnimPlayer.play("bench press")
 		my_timer.start()
 		doingExercise = true
+		playDropOnFinishExercise = true
 	elif gunRay.get_collider() is BigWeightParent:
 		print("do deadlift press now")
 		AnimPlayer.play("Deadlift")
@@ -248,6 +265,12 @@ func interact():
 		doingExercise = true
 		BigWeightParentObject = gunRay.get_collider() as InteractableObject
 		BigWeightParentObject.visible = false
+		playDropOnFinishExercise = true
+	elif gunRay.get_collider() is Speaker:
+		print("Interact with speaker")
+		var SpeakerObject = gunRay.get_collider() as Speaker
+		SpeakerObject.PlayMusic()
+		
 		
 		
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -297,6 +320,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		AnimPlayer.play("Bicep curl")
 	if anim_name != "Idle":
 		Global.CheckTaskDone()
+		if anim_name != "Sit":
+			currentReps += 1
+	if currentReps >= 8:
+		WaterSplashAnimPlayer.play("Sweating")
 
 func _on_Timer_timeout():
 	print("Timer finished!")
@@ -306,3 +333,14 @@ func _on_Timer_timeout():
 		BigWeightParentObject.visible = true
 	if currPickedObject != null:
 		currPickedObject.visible = true
+	if playDropOnFinishExercise:
+		DropWeightsStream.play()
+		playDropOnFinishExercise = false
+	currentReps = 0
+	WaterSplashAnimPlayer.stop()
+	
+func freeze():
+	freeze_camera = true
+
+func unfreeze():
+	freeze_camera = false

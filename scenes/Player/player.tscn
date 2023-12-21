@@ -1,15 +1,40 @@
-[gd_scene load_steps=22 format=3 uid="uid://7gv6q50fuutj"]
+[gd_scene load_steps=33 format=3 uid="uid://7gv6q50fuutj"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_1w47b"]
 [ext_resource type="PackedScene" uid="uid://dbduds4bsaaby" path="res://scenes/Bullet/Bullet.tscn" id="2_je25s"]
+[ext_resource type="AudioStream" uid="uid://bgj3motwj1mu4" path="res://sounds/breath out.wav" id="3_5df1l"]
+[ext_resource type="AudioStream" uid="uid://dutocubktovyg" path="res://sounds/water drinking.wav" id="3_so0xs"]
 [ext_resource type="PackedScene" uid="uid://du37krmy16kw7" path="res://prefabs/bench press weight.tscn" id="3_t6ejs"]
 [ext_resource type="PackedScene" uid="uid://c7mtvd5opa1kt" path="res://prefabs/big weight deadlift.tscn" id="4_stfwm"]
+[ext_resource type="AudioStream" uid="uid://3c2oepqcty8e" path="res://sounds/breath in.wav" id="4_y2n41"]
 [ext_resource type="PackedScene" uid="uid://w0o8ddq0jrl4" path="res://prefabs/water bottle for animation.tscn" id="5_xcxs5"]
 [ext_resource type="PackedScene" uid="uid://chryynrorawkw" path="res://prefabs/dumbell for animation.tscn" id="6_1u1p5"]
+[ext_resource type="AudioStream" uid="uid://chagi1jj0x37" path="res://sounds/treadmill.wav" id="6_litj8"]
+[ext_resource type="AudioStream" uid="uid://dlrrllxnwnblf" path="res://sounds/weight drop.wav" id="7_n1jo6"]
+[ext_resource type="AudioStream" uid="uid://8o1qthw74ycs" path="res://sounds/drop.wav" id="11_d55sl"]
+[ext_resource type="Texture2D" uid="uid://dl8q1a8qbcr37" path="res://images/water-png-792.png" id="11_ysdpq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_emkox"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6b3ky"]
+
+[sub_resource type="GDScript" id="GDScript_xs827"]
+script/source = "extends Camera3D
+
+class_name PlayerCamera
+
+var freeze_camera = false
+
+func freeze():
+	freeze_camera = true
+
+func unfreeze():
+	freeze_camera = false
+
+func _process(delta):
+	if freeze_camera:
+		return
+"
 
 [sub_resource type="Animation" id="Animation_d0yo8"]
 resource_name = "Bicep curl"
@@ -50,6 +75,25 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BreathInStream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_5df1l")
+}, {
+"end_offset": 0.24,
+"start_offset": 0.07,
+"stream": ExtResource("4_y2n41")
+}],
+"times": PackedFloat32Array(0, 1.9)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_kxtmk"]
 resource_name = "Deadlift"
@@ -102,6 +146,25 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BreathInStream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_5df1l")
+}, {
+"end_offset": 0.17,
+"start_offset": 0.0,
+"stream": ExtResource("4_y2n41")
+}],
+"times": PackedFloat32Array(0, 1.4)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_csfbw"]
 resource_name = "Dip"
@@ -130,6 +193,25 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.0610865, 0, 0), Vector3(-0.0610865, 0, 0), Vector3(-0.0610865, 0, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BreathInStream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.14,
+"start_offset": 0.14,
+"stream": ExtResource("3_5df1l")
+}, {
+"end_offset": 0.2,
+"start_offset": 0.0,
+"stream": ExtResource("4_y2n41")
+}],
+"times": PackedFloat32Array(-0.1, 0.9)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_jgwv8"]
 resource_name = "Drink"
@@ -170,6 +252,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WaterDrinkingStream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.33,
+"start_offset": 0.0,
+"stream": ExtResource("3_so0xs")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ls6ch"]
 resource_name = "Dumbell press"
@@ -258,6 +355,25 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BreathInStream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_5df1l")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_y2n41")
+}],
+"times": PackedFloat32Array(0, 1.7)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_q1tur"]
 resource_name = "Idle"
@@ -361,6 +477,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.854624, 0), Vector3(0, 0, 0)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BreathInStream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.04,
+"start_offset": 0.0,
+"stream": ExtResource("3_5df1l")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_y2n41")
+}],
+"times": PackedFloat32Array(0.1, 1.6)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_4nudg"]
 resource_name = "Push up"
@@ -389,6 +524,25 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.497419, 0, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BreathInStream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.13,
+"stream": ExtResource("3_5df1l")
+}, {
+"end_offset": 0.16,
+"start_offset": 0.39,
+"stream": ExtResource("4_y2n41")
+}],
+"times": PackedFloat32Array(-0.2, 1.18)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_5yddu"]
 length = 0.001
@@ -584,6 +738,18 @@ tracks/15/keys = {
 "update": 0,
 "values": [Vector3(0, -1.58771, 0)]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("water splash:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.117647)]
+}
 
 [sub_resource type="Animation" id="Animation_0e3oo"]
 resource_name = "Run"
@@ -612,6 +778,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RunStream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 1.67,
+"start_offset": 13.03,
+"stream": ExtResource("6_litj8")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_r5x84"]
 resource_name = "Sit"
@@ -703,6 +884,25 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(1.5708, 0, 0)]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BreathInStream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_5df1l")
+}, {
+"end_offset": 0.0500001,
+"start_offset": 0.0,
+"stream": ExtResource("4_y2n41")
+}],
+"times": PackedFloat32Array(0, 1.3)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5uoww"]
 _data = {
@@ -718,6 +918,44 @@ _data = {
 "Run": SubResource("Animation_0e3oo"),
 "Sit": SubResource("Animation_r5x84"),
 "bench press": SubResource("Animation_8anfy")
+}
+
+[sub_resource type="Animation" id="Animation_8qrgj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("water splash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ndsvj"]
+resource_name = "Sweating"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("water splash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.231373)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2g0fo"]
+_data = {
+"RESET": SubResource("Animation_8qrgj"),
+"Sweating": SubResource("Animation_ndsvj")
 }
 
 [node name="Player" type="CharacterBody3D"]
@@ -736,6 +974,7 @@ transform = Transform3D(1, 0, 0, 0, 0.998135, 0.0610485, 0, -0.0610485, 0.998135
 
 [node name="Camera3d" type="Camera3D" parent="Head"]
 transform = Transform3D(2.85714, 0, 0, 0, 2.85714, 0, 0, 0, 2.85714, 0, 0.468479, -0.463024)
+script = SubResource("GDScript_xs827")
 
 [node name="RayCast3d" type="RayCast3D" parent="Head/Camera3d"]
 transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, -0.00588068, 0.463024)
@@ -767,3 +1006,29 @@ transform = Transform3D(1, -9.09495e-13, -8.67362e-19, 9.09495e-13, 1, 9.09542e-
 
 [node name="dumbell2" parent="Dumbells" instance=ExtResource("6_1u1p5")]
 transform = Transform3D(1, -6.82121e-13, -8.67362e-19, 6.82121e-13, 1, 6.82168e-13, -8.67362e-19, -6.82074e-13, 1, 0, 1.54346, 0)
+
+[node name="DropWeightsStream" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_n1jo6")
+
+[node name="DropBottleStream" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_d55sl")
+volume_db = -6.584
+
+[node name="BreathInStream" type="AudioStreamPlayer3D" parent="."]
+
+[node name="WaterDrinkingStream" type="AudioStreamPlayer3D" parent="."]
+
+[node name="RunStream" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(2.85714, 0, 0, 0, 2.85714, 0, 0, 0, 2.85714, 0, 0, 0)
+
+[node name="water splash" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(593.5, 331)
+scale = Vector2(0.434767, 0.389821)
+texture = ExtResource("11_ysdpq")
+
+[node name="WaterSplashAnimationPlayer" type="AnimationPlayer" parent="."]
+movie_quit_on_finish = true
+libraries = {
+"": SubResource("AnimationLibrary_2g0fo")
+}

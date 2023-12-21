@@ -1,6 +1,7 @@
-[gd_scene load_steps=75 format=3 uid="uid://b4uguftyj3cut"]
+[gd_scene load_steps=82 format=3 uid="uid://b4uguftyj3cut"]
 
 [ext_resource type="Texture2D" uid="uid://d1dvmewd1xjye" path="res://materials/Materials_Concrete/4k JPEG/Concrete_Base_03/Concrete_Base_03_Ambient_Occlusion.jpg" id="1_8byb2"]
+[ext_resource type="Script" path="res://scenes/MainScene.gd" id="1_33pe8"]
 [ext_resource type="Script" path="res://scripts/PickableObject.gd" id="1_knuxr"]
 [ext_resource type="Texture2D" uid="uid://cte11oud88inw" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Base_Color.jpg" id="1_oqx7v"]
 [ext_resource type="Texture2D" uid="uid://d0t4o3h4t8s4g" path="res://materials/Materials_Concrete/4k JPEG/Concrete_WoodPattern_01/Concrete_WoodPattern_01_Roughness.jpg" id="2_f7atu"]
@@ -43,14 +44,19 @@
 [ext_resource type="PackedScene" uid="uid://jt6kqhnm0vhw" path="res://prefabs/pull up bar.tscn" id="16_8sp11"]
 [ext_resource type="Script" path="res://scripts/Bench.gd" id="17_qoiae"]
 [ext_resource type="PackedScene" uid="uid://b6gftnmr7pvus" path="res://prefabs/dumbells with holder.tscn" id="18_70jvr"]
+[ext_resource type="Script" path="res://scripts/Speaker.gd" id="19_4g7je"]
 [ext_resource type="Script" path="res://scripts/BenchPress.gd" id="19_7r53r"]
 [ext_resource type="PackedScene" uid="uid://d3nl2ekg5vkjr" path="res://prefabs/light.tscn" id="19_lv71h"]
+[ext_resource type="PackedScene" uid="uid://do6vtroqtpw2t" path="res://objects/speaker/speaker.tscn" id="20_whtpy"]
 [ext_resource type="Script" path="res://scripts/PullUp.gd" id="21_kvnw6"]
+[ext_resource type="AudioStream" uid="uid://b0mes2hk7sa8o" path="res://sounds/music.wav" id="21_y0alf"]
 [ext_resource type="Script" path="res://scripts/Dip.gd" id="22_q1f4w"]
+[ext_resource type="AudioStream" uid="uid://lwypicdd71pp" path="res://sounds/whistle.wav" id="24_dfsjo"]
 [ext_resource type="Script" path="res://scripts/WaterBottle.gd" id="26_11vk7"]
 [ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://scenes/Player/player.tscn" id="38_y5xjl"]
 [ext_resource type="Script" path="res://scripts/InteractionText.gd" id="40_vufot"]
 [ext_resource type="Script" path="res://scripts/TaskText.gd" id="51_46o3s"]
+[ext_resource type="PackedScene" uid="uid://dgbhqybh0rgaq" path="res://scenes/PauseMenu.tscn" id="57_soyij"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pkv6"]
 bounce = 0.89
@@ -72,6 +78,9 @@ size = Vector3(0.485, 0.25, 0.11)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5eg08"]
 size = Vector3(0.121263, 0.742833, 0.253195)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig573"]
+size = Vector3(0.291189, 0.480686, 0.39765)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqxhl"]
 size = Vector3(0.22203, 0.724378, 0.825592)
@@ -144,7 +153,8 @@ heightmap_texture = ExtResource("9_w47q1")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_lr688"]
 
-[node name="Node3D" type="Node3D"]
+[node name="MainScene" type="Node3D"]
+script = ExtResource("1_33pe8")
 
 [node name="SphereParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01432, 0, 0)
@@ -267,6 +277,23 @@ script = ExtResource("15_tl3fc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.135995, 0, 0)
 shape = SubResource("BoxShape3D_5eg08")
 
+[node name="Speaker parent" type="RigidBody3D" parent="Objects"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.906607, 0.242463, 3.38777)
+collision_layer = 3
+collision_mask = 2
+freeze = true
+script = ExtResource("19_4g7je")
+
+[node name="speaker" parent="Objects/Speaker parent" instance=ExtResource("20_whtpy")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Speaker parent"]
+shape = SubResource("BoxShape3D_ig573")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Objects/Speaker parent"]
+stream = ExtResource("21_y0alf")
+volume_db = -26.25
+emission_angle_enabled = true
+
 [node name="bench parent" type="RigidBody3D" parent="Objects"]
 transform = Transform3D(0.998806, 0, 0.0488498, 0, 1, 0, -0.0488498, 0, 0.998806, -1.18345, 0.107, 0.580264)
 collision_layer = 3
@@ -278,6 +305,11 @@ script = ExtResource("17_qoiae")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/bench parent"]
 shape = SubResource("BoxShape3D_jqxhl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Objects/bench parent"]
+stream = ExtResource("24_dfsjo")
+volume_db = -26.25
+emission_angle_enabled = true
 
 [node name="bench press parent" type="RigidBody3D" parent="Objects"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.274194, 0.333, 0.02201)
@@ -522,3 +554,5 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("51_46o3s")
+
+[node name="PauseMenu" parent="." instance=ExtResource("57_soyij")]

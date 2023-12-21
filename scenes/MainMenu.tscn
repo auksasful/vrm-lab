@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://07w6a1djn2uk"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_strk5"]
+[ext_resource type="AudioStream" uid="uid://vhgq7i18t4yq" path="res://sounds/button click.wav" id="2_867jd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vuc7o"]
+font_size = 41
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_strk5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 654.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Play"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Exit
+"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 1155.0
+offset_bottom = 214.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "
+
+Welcome to my Virtual Gym!"
+label_settings = SubResource("LabelSettings_vuc7o")
+horizontal_alignment = 1
+
+[node name="ButtonClickStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_867jd")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

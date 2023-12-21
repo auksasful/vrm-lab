@@ -104,6 +104,62 @@ Model Information:
 * source:	https://github.com/ismailgamedev/FPS-Controller-Mono
 * author:	Ismail Filipov (ismailgamedev https://github.com/ismailgamedev)
 
+22.
+* title:	KRK ROKIT RP8 G4
+* source:	https://sketchfab.com/3d-models/krk-rokit-rp8-g4-ab5a5d56d25e416dad13e6f859f308a5
+* author:	jeff.kershaw (https://sketchfab.com/jeff.kershaw)
 
+23.
+* title:	KRK ROKIT RP8 G4
+* source:	https://sketchfab.com/3d-models/krk-rokit-rp8-g4-ab5a5d56d25e416dad13e6f859f308a5
+* author:	jeff.kershaw (https://sketchfab.com/jeff.kershaw)
 
+24.
+* title:	Water Drops Image PNG Transparent Background
+* source:	https://www.freeiconspng.com/img/792
+* author:	Ahkâm
 
+25.
+* title:	Water Drops Image PNG Transparent Background
+* source:	https://www.freeiconspng.com/img/792
+* author:	Ahkâm
+
+26.
+* title:	breathing.wav
+* source:	https://freesound.org/people/ljcool2006/sounds/609506/
+* author:	ljcool2006
+
+27.
+* title:	Button_Click
+* source:	https://freesound.org/people/TheWilliamSounds/sounds/686557/
+* author:	TheWilliamSounds
+
+28.
+* title:	Drop 12.wav
+* source:	https://freesound.org/people/roboroo/sounds/492862/
+* author:	roboroo
+
+29.
+* title:	Treadmill
+* source:	https://freesound.org/people/flunkspagnargel/sounds/243654/
+* author:	flunkspagnargel
+
+30.
+* title:	Liquid Drink .mp3
+* source:	https://freesound.org/people/SilverIllusionist/sounds/411172/
+* author:	SilverIllusionist
+
+31.
+* title:	Weights.mp3
+* source:	https://freesound.org/people/jdminny/sounds/655010/
+* author:	jdminny
+
+32.
+* title:	Whistling.wav
+* source:	https://freesound.org/people/MessyAcousticApocalypse666/sounds/594893/
+* author:	MessyAcousticApocalypse666
+
+33.
+* title:	Hyper Tech House
+* source:	https://www.ghosthack.de/free_sample_packs/hyper-tech-house
+* author:	GhostHack

@@ -1,0 +1,8 @@
+Model Information:
+* title:	KRK ROKIT RP8 G4
+* source:	https://sketchfab.com/3d-models/krk-rokit-rp8-g4-ab5a5d56d25e416dad13e6f859f308a5
+* author:	jeff.kershaw (https://sketchfab.com/jeff.kershaw)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
